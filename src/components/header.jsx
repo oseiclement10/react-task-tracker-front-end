@@ -1,9 +1,9 @@
 import Button from './button'
 const Header = () =>{
     return (
-        <header class='header'>
+        <header className='header'>
             <h2>Welcome To Task Tracker UI </h2>
-            <Button text = 'add' color='black' />
+            <Button text = 'Add' color='black' />
             </header>
     )
 }
