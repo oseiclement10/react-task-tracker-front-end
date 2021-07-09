@@ -1,6 +1,7 @@
 import Header from './components/header';
 import Tasks from './components/Tasks';
 import AddTask from './components/addTask';
+import Panel from './components/notification';
 import {useState,useEffect} from 'react';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     
   const editRemind = async (id) => {
      const feedback = await fetch(`http://localhost:5000/task/${id}`,{method:"PATCH"});
+    
     }
 
   const fetchTasks = async () => {
@@ -35,6 +37,7 @@ function App() {
 
     const deleteTask = async (id) =>{
         const res = await fetch(`http://localhost:5000/task/${id}`,{method:"DELETE"});
+        
     }
  
 const toggleAdd = () =>{
