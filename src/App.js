@@ -15,7 +15,9 @@ function App() {
        getTasks();
   });
 
-  
+  const editRemind = async (id) => {
+     const feedback = await fetch(`http://localhost:5000/task/${id}`,{method:"PATCH"});
+    }
 
   const fetchTasks = async () => {
     const res = await fetch('http://localhost:5000/task',{method:"GET"});
@@ -30,9 +32,9 @@ function App() {
     <div className="container">   
     <Header toggle={toggleAdd} onoff = {toggelAO}/>  
     {toggelAO && <AddTask />}
-    <Tasks task = {tasks}/>
+    <Tasks task = {tasks} remind={editRemind}/>
     </div>
   );
-}
 
+}
 export default App;
