@@ -1,9 +1,9 @@
 import Task from './Task';
-const Tasks = ({task,remind}) =>{
+const Tasks = ({task,remind,delTrigger}) =>{
     return (
         <>
         {task.map((task,index)=>{
-           return <Task key = {index} task ={task} category={task.reminder} recall = {remind}/>
+           return <Task key = {index} task ={task} category={task.reminder} recall = {remind} trigger={delTrigger}/>
         })}
         </>
     )

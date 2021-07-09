@@ -14,7 +14,7 @@ function App() {
        }
        getTasks();
   });
-
+    
   const editRemind = async (id) => {
      const feedback = await fetch(`http://localhost:5000/task/${id}`,{method:"PATCH"});
     }
@@ -24,15 +24,27 @@ function App() {
     const data = await res.json();
     return data;
  }
+    const createNewTask = async (task)=>{
+       const ress = await fetch('http://localhost:5000/task/newpost',{method:"POST",body:JSON.stringify(task),headers:{'Content-type':'application/json'}});
+      if (ress.status===200){
+        alert('added successsfully');
+      }else{
+        console.log("failed");
+      }
+      }
 
- const toggleAdd = () =>{
+    const deleteTask = async (id) =>{
+        const res = await fetch(`http://localhost:5000/task/${id}`,{method:"DELETE"});
+    }
+ 
+const toggleAdd = () =>{
     setToggle(!toggelAO);
- }
+}
   return (
     <div className="container">   
     <Header toggle={toggleAdd} onoff = {toggelAO}/>  
-    {toggelAO && <AddTask />}
-    <Tasks task = {tasks} remind={editRemind}/>
+    {toggelAO && <AddTask onAdd={createNewTask}/>}
+    <Tasks task = {tasks} remind={editRemind} delTrigger = {deleteTask}/>
     </div>
   );
 
