@@ -18,6 +18,7 @@ body{
     border:1px solid blue;
     border-radius:3px;
     min-height:300px;
+    overflow: hidden;
 }
 .header{
     display:flex;
@@ -30,7 +31,7 @@ body{
     color:white;
     margin:5px;
     outline:none;
-    padding:10px 20px;
+    padding:5px 10px;
     border:none;
     border-radius:3px;
     text-decoration: none;
@@ -58,4 +59,49 @@ body{
 .glow:hover{
     transform:scale(0.8);
     color:gray;
+}
+.form-container{
+    margin:0;
+    padding:0;
+    margin-bottom:20px;
+}
+.form-control{
+    padding:5px;
+    margin:5px;
+}
+
+.form-control label{
+    display:block;
+    padding:5px;
+    margin:5px;
+}
+.form-control input:not(.btn-lng){
+    display:block;
+    width:100%;
+    padding:5px;
+}
+.btn-lng{
+    width:100%;
+    padding:10px;
+    background-color: black;
+    color:white;
+    border:none;
+    border-radius:3px;
+    cursor:pointer;
+    outline:none;
+}
+.btn-lng:hover{
+    opacity: 0.8;
+}
+.checkbox{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+}
+.checkbox label{
+    flex:1;
+}
+.checkbox input{
+    flex:2;
 }
